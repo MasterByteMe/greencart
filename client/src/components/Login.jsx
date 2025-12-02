@@ -18,23 +18,23 @@ const Login = () => {
         e.preventDefault();
 
         try {
-            const { data } = await axios.post(`api/user/${state}`, { name, email, password });
+            const { data } = await axios.post(
+                `${import.meta.env.VITE_BACKEND_URL}/api/user/${state}`,
+                { name, email, password },
+                { withCredentials: true }
+            );
 
             if (data.success) {
                 toast.success(state === 'login' ? 'Login successful!' : 'Registration successful!');
 
-                // ✅ Step 1: Fetch user from backend (ensures cookie/session is read)
-                await fetchUser();
-
-                // ✅ Step 2: Close login modal & navigate
-                setShowUserLogin(false);
-                navigate('/');
-
+                await fetchUser();        // MUST await
+                setShowUserLogin(false);  // Close modal
+                navigate('/');            // Redirect home
             } else {
                 toast.error(data.message);
             }
         } catch (error) {
-            toast.error(error.message);
+            toast.error(error.response?.data?.message || error.message);
         }
     };
 

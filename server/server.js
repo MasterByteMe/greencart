@@ -36,11 +36,17 @@ app.use(express.json());
 app.use(cookieParser());
 app.use(
     cors({
-        origin: allowedOrigins,
+        origin: function (origin, callback) {
+            if (!origin) return callback(null, true); // Allow server-to-server
+            if (allowedOrigins.includes(origin)) {
+                callback(null, true);
+            } else {
+                callback(new Error('CORS: Not allowed by policy'));
+            }
+        },
         credentials: true,
     })
 );
-
 
 app.get('/', (req, res) => res.send('API is working ✅'));
 
