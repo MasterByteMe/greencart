@@ -21,7 +21,7 @@ const port = process.env.PORT || 4000;
 await connectDB();
 await connectCloudinary();
 
-const allowedOrigins = ['http://localhost:5173', 'https://greencart-m.vercel.app'];
+const allowedOrigins = ['https://greencart-m.vercel.app'];
 
 
 // ✅ Stripe webhook must be BEFORE express.json()
