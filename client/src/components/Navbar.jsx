@@ -7,7 +7,7 @@ import api from "../config/api";
 
 const Navbar = () => {
     const [open, setOpen] = React.useState(false);
-    const { user, setUser, setShowUserLogin, navigate, searchQuery, setSearchQuery, getCartCount } = useAppContext();
+    const { user, setUser, setShowUserLogin, navigate, searchQuery, setSearchQuery, getCartCount, setCartItems } = useAppContext();
 
     // function to logout user
     const logout = async () => {
@@ -16,6 +16,7 @@ const Navbar = () => {
             if (data.success) {
                 toast.success(data.message);
                 setUser(null)
+                setCartItems({});  // clear cart
                 navigate('/');
             } else {
                 toast.error(data.message);
