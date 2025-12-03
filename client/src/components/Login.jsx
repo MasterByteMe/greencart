@@ -1,11 +1,11 @@
 import React from 'react';
 import { useAppContext } from '../context/AppContext'
 import toast from "react-hot-toast";
-
+import api from "../config/api";
 
 const Login = () => {
 
-    const { setShowUserLogin, axios, navigate, fetchUser } = useAppContext();
+    const { setShowUserLogin, navigate, fetchUser } = useAppContext();
 
     const [state, setState] = React.useState("login");
     const [name, setName] = React.useState("");
@@ -18,8 +18,8 @@ const Login = () => {
         e.preventDefault();
 
         try {
-            const { data } = await axios.post(
-                `${import.meta.env.VITE_BACKEND_URL}/api/user/${state}`,
+            const { data } = await api.post(
+                `${import.meta.env.VITE_BACKEND_URL}/user/${state}`,
                 { name, email, password },
                 { withCredentials: true }
             );

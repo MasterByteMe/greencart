@@ -2,9 +2,10 @@ import React, { useEffect, useState } from 'react';
 import { useAppContext } from "../context/AppContext";
 import { assets } from "../assets/assets";
 import toast from "react-hot-toast";
+import api from "../config/api";
 
 const Cart = () => {
-    const { products, currency, cartItems, removeFromCart, getCartCount, updateCartItem, navigate, getCartAmount, axios, user, setCartItems } = useAppContext();
+    const { products, currency, cartItems, removeFromCart, getCartCount, updateCartItem, navigate, getCartAmount, user, setCartItems } = useAppContext();
 
 
     const [cartArray, setCartArray] = useState([]);
@@ -37,7 +38,7 @@ const Cart = () => {
 
     const getUserAddress = async () => {
         try {
-            const { data } = await axios.get('/api/address/get');
+            const { data } = await api.get('/address/get');
             if (data.success) {
                 setAddresses(data.addresses);
                 if (data.addresses.length > 0) {
@@ -58,7 +59,7 @@ const Cart = () => {
             }
             // Place Order with COD
             if (paymentOption === 'COD') {
-                const { data } = await axios.post('/api/order/cod', {
+                const { data } = await api.post('/order/cod', {
                     userId: user._id,
                     items: cartArray.map(item => ({ product: item._id, quantity: item.quantity })),
                     address: selectedAddress._id
@@ -72,7 +73,7 @@ const Cart = () => {
                 }
             } else {
                 //Place order with stripe
-                const { data } = await axios.post('/api/order/stripe', {
+                const { data } = await api.post('/order/stripe', {
                     userId: user._id,
                     items: cartArray.map(item => ({ product: item._id, quantity: item.quantity })),
                     address: selectedAddress._id

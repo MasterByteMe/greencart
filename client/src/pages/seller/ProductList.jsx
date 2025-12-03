@@ -1,14 +1,16 @@
 import React from 'react'
 import { useAppContext } from "../../context/AppContext";
 import toast from "react-hot-toast";
+import api from "../config/api";
+
 
 const ProductList = () => {
 
-    const { products, currency, axios, fetchProducts } = useAppContext();
+    const { products, currency, fetchProducts } = useAppContext();
 
     const toggleStock = async (id, inStock) => {
         try {
-            const { data } = await axios.post('/api/product/stock', { id, inStock });
+            const { data } = await api.post('/product/stock', { id, inStock });
             if (data.success) {
                 await fetchProducts();
                 toast.success(data.message);

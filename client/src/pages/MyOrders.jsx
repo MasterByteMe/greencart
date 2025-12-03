@@ -1,17 +1,17 @@
 import React, { useEffect, useState } from 'react'
 import { useAppContext } from '../context/AppContext'
-
+import api from "../config/api";
 
 const MyOrders = () => {
 
     const [myOrders, setMyOrders] = useState([]);
-    const { currency, axios, user, isAuthLoaded } = useAppContext();
+    const { currency, user, isAuthLoaded } = useAppContext();
 
     // fetch the myOrders state
     useEffect(() => {
         const fetchMyOrders = async () => {
             try {
-                const { data } = await axios.get(`/api/order/user?userId=${user._id}`);
+                const { data } = await api.get(`/order/user?userId=${user._id}`);
                 if (data.success) setMyOrders(data.orders);
             } catch (error) {
                 console.log("Error fetching orders:", error.message);
