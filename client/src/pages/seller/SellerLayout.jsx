@@ -19,7 +19,7 @@ const SellerLayout = () => {
     // function to logout seller
     const logout = async () => {
         try {
-            const { data } = await api.get('/seller/logout');
+            const { data } = await api.get('/api/seller/logout');
             if (data.success) {
                 toast.success(data.message);
                 navigate('/');

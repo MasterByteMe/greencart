@@ -12,7 +12,7 @@ const Navbar = () => {
     // function to logout user
     const logout = async () => {
         try {
-            const { data } = await api.get('/user/logout');
+            const { data } = await api.get('/api/user/logout');
             if (data.success) {
                 toast.success(data.message);
                 setUser(null)

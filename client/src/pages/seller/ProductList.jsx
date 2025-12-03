@@ -10,7 +10,7 @@ const ProductList = () => {
 
     const toggleStock = async (id, inStock) => {
         try {
-            const { data } = await api.post('/product/stock', { id, inStock });
+            const { data } = await api.post('/api/product/stock', { id, inStock });
             if (data.success) {
                 await fetchProducts();
                 toast.success(data.message);

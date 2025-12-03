@@ -14,7 +14,7 @@ const SellerLogin = () => {
     const onSubmitHandler = async (event) => {
         try {
             event.preventDefault();
-            const { data } = await api.post('/seller/login', { email, password })
+            const { data } = await api.post('/api/seller/login', { email, password })
             if (data.success) {
                 setIsSeller(true);
                 navigate('/seller');

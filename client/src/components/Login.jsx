@@ -19,7 +19,7 @@ const Login = () => {
 
         try {
             const { data } = await api.post(
-                `${import.meta.env.VITE_BACKEND_URL}/user/${state}`,
+                `${import.meta.env.VITE_BACKEND_URL}/api/user/${state}`,
                 { name, email, password },
                 { withCredentials: true }
             );

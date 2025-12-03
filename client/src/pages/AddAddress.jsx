@@ -42,7 +42,7 @@ const AddAddress = () => {
     const onSubmitHandler = async (e) => {
         e.preventDefault();
         try {
-            const { data } = await api.post('/address/add', { address })
+            const { data } = await api.post('/api/address/add', { address })
             if (data.success) {
                 toast.success(data.message);
                 navigate('/cart');

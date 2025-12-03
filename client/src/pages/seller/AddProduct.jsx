@@ -33,7 +33,7 @@ const AddProduct = () => {
                 formData.append('images', files[i]);
             }
 
-            const { data } = await api.post('/product/add', formData)
+            const { data } = await api.post('/api/product/add', formData)
 
             if (data) {
                 toast.success(data.message);

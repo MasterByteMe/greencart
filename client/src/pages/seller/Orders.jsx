@@ -13,7 +13,7 @@ const Orders = () => {
     // fetch the orders
     const fetchOrders = async () => {
         try {
-            const { data } = await api.get('/order/seller');
+            const { data } = await api.get('/api/order/seller');
             if (data.success) {
                 setOrders(data.orders)
             } else {

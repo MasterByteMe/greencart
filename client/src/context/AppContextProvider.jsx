@@ -22,7 +22,7 @@ export const AppContextProvider = ({ children }) => {
     // ✅ Fetch logged-in user
     const fetchUser = async () => {
         try {
-            const { data } = await api.get("/user/is-auth");
+            const { data } = await api.get("/api/user/is-auth");
             if (data.success) {
                 setUser(data.user);
                 setCartItems(data.user.cartItems);
@@ -39,7 +39,7 @@ export const AppContextProvider = ({ children }) => {
     // ✅ Fetch seller auth
     const fetchSeller = async () => {
         try {
-            const { data } = await api.get("/seller/is-auth");
+            const { data } = await api.get("/api/seller/is-auth");
             setIsSeller(data.success);
         } catch {
             setIsSeller(false);
@@ -49,7 +49,7 @@ export const AppContextProvider = ({ children }) => {
     // ✅ Fetch all products
     const fetchProducts = async () => {
         try {
-            const { data } = await api.get("/product/list");
+            const { data } = await api.get("/api/product/list");
             if (data.success) setProducts(data.products);
             else toast.error(data.message);
         } catch (error) {
@@ -113,7 +113,7 @@ export const AppContextProvider = ({ children }) => {
     useEffect(() => {
         const updateCart = async () => {
             try {
-                const { data } = await api.post("/cart/update", { cartItems });
+                const { data } = await api.post("/api/cart/update", { cartItems });
                 if (!data.success) toast.error(data.message);
             } catch (error) {
                 toast.error(error.message);

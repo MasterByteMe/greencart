@@ -38,7 +38,7 @@ const Cart = () => {
 
     const getUserAddress = async () => {
         try {
-            const { data } = await api.get('/address/get');
+            const { data } = await api.get('/api/address/get');
             if (data.success) {
                 setAddresses(data.addresses);
                 if (data.addresses.length > 0) {
@@ -59,7 +59,7 @@ const Cart = () => {
             }
             // Place Order with COD
             if (paymentOption === 'COD') {
-                const { data } = await api.post('/order/cod', {
+                const { data } = await api.post('/api/order/cod', {
                     userId: user._id,
                     items: cartArray.map(item => ({ product: item._id, quantity: item.quantity })),
                     address: selectedAddress._id
@@ -73,7 +73,7 @@ const Cart = () => {
                 }
             } else {
                 //Place order with stripe
-                const { data } = await api.post('/order/stripe', {
+                const { data } = await api.post('/api/order/stripe', {
                     userId: user._id,
                     items: cartArray.map(item => ({ product: item._id, quantity: item.quantity })),
                     address: selectedAddress._id
