@@ -3,7 +3,7 @@ import { assets } from "../../assets/assets";
 import { useAppContext } from "../../context/AppContext";
 import { Link, NavLink, Outlet } from "react-router-dom";
 import toast from "react-hot-toast";
-import api from "../config/api";
+import api from "../../config/api";
 
 
 const SellerLayout = () => {

@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { assets } from "../../assets/assets";
 import { categories } from '../../assets/assets';
 import toast from "react-hot-toast";
-import api from "../config/api";
+import api from "../../config/api";
 
 
 const AddProduct = () => {

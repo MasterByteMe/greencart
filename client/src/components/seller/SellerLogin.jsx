@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { useAppContext } from "../../context/AppContext";
 import toast from "react-hot-toast";
-import api from "../config/api";
+import api from "../../config/api"
 
 const SellerLogin = () => {
 
