@@ -13,9 +13,9 @@ export const sellerLogin = async (req, res) => {
 
             // send the token to response with name, value and other configuration 
             res.cookie('sellerToken', token, {
-                httpOnly: true, //Prevent JavaScript to access the cookie
-                secure: process.env.NODE_ENV === 'production', //Use secure cookies in production
-                sameSite: process.env.NODE_ENV === 'production' ? 'none' : 'strict', //CSRF protection
+                httpOnly: true,
+                secure: true,     // must be true for production over HTTPS
+                sameSite: 'none', // cross-site requests require 'none'
                 maxAge: 7 * 24 * 60 * 60 * 1000, //cookie expiration time
             })
             return res.json({ success: true, message: "Logged In" });
@@ -40,17 +40,22 @@ export const isSellerAuth = async (req, res) => {
 
 
 // Logout Seller: /api/seller/logout
-export const sellerLogout = async (req, res) => {
+export const sellerLogout = (req, res) => {
     try {
-        // clear the cookie that saved to variable token to logout the user
-        res.clearCookie("sellerToken", {
-            httpOnly: true, //Prevent JavaScript to access the cookie
-            secure: process.env.NODE_ENV === 'production', //Use secure cookies in production
-            sameSite: process.env.NODE_ENV === 'production' ? 'none' : 'strict', //CSRF protection
-        })
+        // Prevent caching
+        res.setHeader('Cache-Control', 'no-store');
+
+        // Clear the token cookie
+        res.clearCookie('token', {
+            httpOnly: true,
+            secure: true,     // must be true for production over HTTPS
+            sameSite: 'none', // cross-site requests require 'none'
+            path: '/',        // ensures the cookie is cleared everywhere
+        });
+
         return res.json({ success: true, message: "Logged Out Successfully" });
     } catch (error) {
-        console.log(error.message);
-        res.json({ success: false, message: error.message })
+        console.log(error);
+        return res.status(500).json({ success: false, message: error.message });
     }
 };

@@ -108,21 +108,22 @@ export const isAuth = async (req, res) => {
 
 
 // Logout User: /api/user/logout
-
 export const logout = (req, res) => {
     try {
-        // Use EXACT same options as login
-        res.clearCookie("token", {
+        // Prevent caching
+        res.setHeader('Cache-Control', 'no-store');
+
+        // Clear the token cookie
+        res.clearCookie('token', {
             httpOnly: true,
-            secure: true,
-            sameSite: "none",
-            path: "/",
+            secure: true,     // must be true for production over HTTPS
+            sameSite: 'none', // cross-site requests require 'none'
+            path: '/',        // ensures the cookie is cleared everywhere
         });
 
         return res.json({ success: true, message: "Logged Out Successfully" });
-
     } catch (error) {
         console.log(error);
-        return res.json({ success: false, message: error.message });
+        return res.status(500).json({ success: false, message: error.message });
     }
 };

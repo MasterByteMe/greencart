@@ -2,11 +2,12 @@ import express from 'express';
 import authUser from "../middlewares/authUser.js";
 import { updateCart } from '../controllers/cartController.js';
 
-// Create an Express router instance
 const cartRouter = express.Router();
 
-// Define the /update route with user authentication middleware
-cartRouter.post('/update', authUser, updateCart);
+// ✅ Update cart (sensitive, user-specific)
+cartRouter.post('/update', authUser, (req, res, next) => {
+    res.setHeader('Cache-Control', 'no-store');
+    updateCart(req, res, next);
+});
 
-// Export the router to be used in server.js
 export default cartRouter;
