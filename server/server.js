@@ -13,44 +13,27 @@ import addressRouter from './routes/addressRoute.js';
 import orderRouter from './routes/orderRoute.js';
 import { stripeWebhooks } from './controllers/orderController.js';
 
-//app
 const app = express();
 const port = process.env.PORT || 4000;
 
-// ✅ Connect DB and Cloudinary
 await connectDB();
 await connectCloudinary();
 
-const allowedOrigins = ['http://localhost:5173', 'https://greencart-m.vercel.app'];
-
-
-// ✅ Stripe webhook must be BEFORE express.json()
-app.post(
-    '/stripe',
-    express.raw({ type: 'application/json' }),
-    stripeWebhooks
-);
-
-// ✅ Regular middleware comes AFTER the webhook
-app.use(express.json());
-app.use(cookieParser());
+// 🔥 CORS MUST COME FIRST — ABOVE EVERYTHING
 app.use(
     cors({
-        origin: function (origin, callback) {
-            if (!origin) return callback(null, true); // Allow server-to-server
-            if (allowedOrigins.includes(origin)) {
-                callback(null, true);
-            } else {
-                callback(new Error('CORS: Not allowed by policy'));
-            }
-        },
+        origin: ['http://localhost:5173', 'https://greencart-m.vercel.app'],
         credentials: true,
     })
 );
 
-app.get('/', (req, res) => res.send('API is working ✅'));
+// Stripe webhook MUST stay raw AND must stay above json()
+app.post('/stripe', express.raw({ type: 'application/json' }), stripeWebhooks);
 
-// ✅ Register all routes
+// After CORS
+app.use(express.json());
+app.use(cookieParser());
+
 app.use('/api/user', userRouter);
 app.use('/api/seller', sellerRouter);
 app.use('/api/product', productRouter);
@@ -58,7 +41,8 @@ app.use('/api/cart', cartRouter);
 app.use('/api/address', addressRouter);
 app.use('/api/order', orderRouter);
 
-// ✅ Start the server
+app.get('/', (req, res) => res.send('API is working'));
+
 app.listen(port, () => {
-    console.log(`🚀 Server is running on port ${port} in ${process.env.NODE_ENV} mode`);
+    console.log(`Server running on port ${port}`);
 });
