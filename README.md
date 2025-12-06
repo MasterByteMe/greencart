@@ -145,7 +145,7 @@ greencart/
    ├── screenshots/   # Images for README
    ├── README.md
    └── .gitignore
-
+```text
 
 
 
@@ -177,6 +177,7 @@ Frontend .env
 * VITE_BACKEND_URL=http://localhost:4000
 * VITE_CURRENCY=$
 
+
 ## Installation
 
 🧪 Run Locally
@@ -185,22 +186,21 @@ Frontend .env
 ```text
 git clone https://github.com/YOUR_USERNAME/greencart.git
 cd greencart
+```text
 
 #### Backend
-
 ```text
 cd server
 npm install
 npm run server
-
+```text
 
 #### Frontend
-
 ```text
 cd client
 npm install
 npm run dev
-
+```text
 
 ## API Endpoints
 
@@ -210,6 +210,7 @@ POST   /api/user/register
 POST   /api/user/login
 GET    /api/user/is-auth
 GET    /api/user/logout
+```text
 
 ### Product Routes
 ```text
@@ -217,6 +218,7 @@ POST   /api/product/add
 POST   /api/product/stock
 GET    /api/product/list
 GET    /api/product/id?id=<productId>
+```text
 
 ### Cart Route
 POST   /api/cart/update
@@ -225,6 +227,7 @@ POST   /api/cart/update
 ```text
 POST   /api/address/add
 GET    /api/address/get
+```text
 
 ### Order Routes
 ```text
@@ -232,7 +235,7 @@ POST   /api/order/cod
 POST   /api/order/stripe
 GET    /api/order/user
 GET    /api/order/seller
-
+```text
 
 
 ## 📸 Project Screenshots
