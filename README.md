@@ -25,11 +25,11 @@ Modern full-stack grocery e-commerce web application built with React, Node.js, 
 
 - [Overview](#overview)
 - [Features](#features)
-- [Project Structure](#📁project-structure)
-- [Environment Variables](#🔐environment-variables)
-- [Installation](#🚀installation)
-- [API Endpoints](#📡api-endpoints)
-- [Project Screenshots](#📸project-screenshots)
+- [Project Structure](#project-structure)
+- [Environment Variables](#environment-variables)
+- [Installation](#installation)
+- [API Endpoints](#api-endpoints)
+- [Project Screenshots](#project-screenshots)
 - [Author](#author)
 - [License](#license)
 
@@ -135,7 +135,7 @@ This project demonstrates:
 * Admin full order list
 
 
-## 📁 Project Structure
+## 📁Project Structure
 
 ```text
 greencart/
@@ -149,7 +149,7 @@ greencart/
 
 
 
-## 🔐 Environment Variables
+## Environment Variables
 Backend .env
 
 * PORT=4000
@@ -178,7 +178,7 @@ Frontend .env
 * VITE_CURRENCY=$
 
 
-## 🚀 Installation
+## Installation
 
 🧪 Run Locally
 1. Clone Repo
@@ -202,7 +202,7 @@ npm install
 npm run dev
 ```
 
-## 📡 API Endpoints
+## API Endpoints
 
 ### User Routes
 ```text
@@ -238,7 +238,7 @@ GET    /api/order/seller
 ```
 
 
-## 📸 Project Screenshots
+## Project Screenshots
 
 ![Home](./screenshots/1.frontpage.png)
 
@@ -260,9 +260,10 @@ GET    /api/order/seller
 
 
 
-👤 Author
+## Author
 
 Mark Anthony Ruiz
+
 Full Stack Developer
 
 
