@@ -25,11 +25,11 @@ Modern full-stack grocery e-commerce web application built with React, Node.js, 
 
 - [Overview](#overview)
 - [Features](#features)
-- [Project Structure](#project-structure)
-- [Environment Variables](#environment-variables)
-- [Installation](#installation)
-- [API Endpoints](#api-endpoints)
-- [Project Screenshots](#project-screenshots)
+- [Project Structure](#📁project-structure)
+- [Environment Variables](#🔐environment-variables)
+- [Installation](#🚀installation)
+- [API Endpoints](#📡api-endpoints)
+- [Project Screenshots](#📸project-screenshots)
 - [Author](#author)
 - [License](#license)
 
@@ -178,7 +178,7 @@ Frontend .env
 * VITE_CURRENCY=$
 
 
-## Installation
+## 🚀 Installation
 
 🧪 Run Locally
 1. Clone Repo
@@ -202,7 +202,7 @@ npm install
 npm run dev
 ```
 
-## API Endpoints
+## 📡 API Endpoints
 
 ### User Routes
 ```text
