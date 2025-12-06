@@ -4,24 +4,25 @@ Modern full-stack grocery e-commerce web application built with React, Node.js, 
 
 ### 🚀 Deployment & Live Link
 
-[![View Live Demo](img.shields.io)](https://greencart-m.vercel.app)
-
+[![View Live Demo]()](https://greencart-m.vercel.app)
 
 <br>
+
 ## 🏷️ Badges
+
 <p align="left"> <img src="https://img.shields.io/badge/Frontend-React%2019-blue?style=for-the-badge" /> <img src="https://img.shields.io/badge/Backend-Node.js%20%7C%20Express-green?style=for-the-badge" /> <img src="https://img.shields.io/badge/Database-MongoDB-brightgreen?style=for-the-badge" /> <img src="https://img.shields.io/badge/Payments-Stripe-8A2BE2?style=for-the-badge" /> <img src="https://img.shields.io/badge/Images-Cloudinary-lightgrey?style=for-the-badge" /> <img src="https://img.shields.io/badge/Deploy-Vercel-black?style=for-the-badge" /> </p> <br>
 
 
 
 ## 🚀 Tech Stack
 #### Frontend
-<p align="left"> <img src="https://skillicons.dev/icons?i=react,vite,react-router,tailwind,axios" height="55" /> </p>
+<p align="left"> <img src="https://skillicons.dev/icons?i=react,vite,tailwind" height="55" /> </p>
 
 #### Backend
-<p align="left"> <img src="https://skillicons.dev/icons?i=nodejs,express,JWT-Authentication,JWTAuthentication,MongoDB,Mongoose,cloudinary,stripe" height="55" /> </p>
+<p align="left"> <img src="https://skillicons.dev/icons?i=nodejs,express,mongodb" height="55" /> </p>
 
 #### Tools
-<p align="left"> <img src="https://skillicons.dev/icons?i=vercel,git,github" height="55" /> </p>
+<p align="left"> <img src="https://skillicons.dev/icons?i=vscode,vercel,git,github" height="55" /> </p>
 
 
 
