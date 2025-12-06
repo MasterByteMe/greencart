@@ -4,7 +4,7 @@ Modern full-stack grocery e-commerce web application built with React, Node.js, 
 
 ### 🚀 Deployment & Live Link
 
-[![View Live Demo]()](https://greencart-m.vercel.app)
+[![View Live Demo]](https://greencart-m.vercel.app)
 
 <br>
 
