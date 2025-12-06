@@ -1,21 +1,27 @@
 # 📦 GreenCart — MERN E-Commerce Platform
 
 Modern full-stack grocery e-commerce web application built with React, Node.js, Express, and MongoDB, featuring authentication, cart management, product admin tools, online payments, and Cloudinary image uploads.
+
+### 🚀 Deployment & Live Link
+
+[![View Live Demo](img.shields.io)](https://greencart-m.vercel.app)
+
+
 <br>
 ## 🏷️ Badges
-<p align="center"> <img src="https://img.shields.io/badge/Frontend-React%2019-blue?style=for-the-badge" /> <img src="https://img.shields.io/badge/Backend-Node.js%20%7C%20Express-green?style=for-the-badge" /> <img src="https://img.shields.io/badge/Database-MongoDB-brightgreen?style=for-the-badge" /> <img src="https://img.shields.io/badge/Payments-Stripe-8A2BE2?style=for-the-badge" /> <img src="https://img.shields.io/badge/Images-Cloudinary-lightgrey?style=for-the-badge" /> <img src="https://img.shields.io/badge/Deploy-Vercel-black?style=for-the-badge" /> </p> <br>
+<p align="left"> <img src="https://img.shields.io/badge/Frontend-React%2019-blue?style=for-the-badge" /> <img src="https://img.shields.io/badge/Backend-Node.js%20%7C%20Express-green?style=for-the-badge" /> <img src="https://img.shields.io/badge/Database-MongoDB-brightgreen?style=for-the-badge" /> <img src="https://img.shields.io/badge/Payments-Stripe-8A2BE2?style=for-the-badge" /> <img src="https://img.shields.io/badge/Images-Cloudinary-lightgrey?style=for-the-badge" /> <img src="https://img.shields.io/badge/Deploy-Vercel-black?style=for-the-badge" /> </p> <br>
 
 
 
 ## 🚀 Tech Stack
 #### Frontend
-<p align="center"> <img src="https://skillicons.dev/icons?i=react,vite,react-router,tailwind,axios" height="55" /> </p>
+<p align="left"> <img src="https://skillicons.dev/icons?i=react,vite,react-router,tailwind,axios" height="55" /> </p>
 
 #### Backend
-<p align="center"> <img src="https://skillicons.dev/icons?i=nodejs,express,JWT-Authentication,JWTAuthentication,MongoDB,Mongoose,cloudinary,stripe" height="55" /> </p>
+<p align="left"> <img src="https://skillicons.dev/icons?i=nodejs,express,JWT-Authentication,JWTAuthentication,MongoDB,Mongoose,cloudinary,stripe" height="55" /> </p>
 
 #### Tools
-<p align="center"> <img src="https://skillicons.dev/icons?i=vercel,git,github" height="55" /> </p>
+<p align="left"> <img src="https://skillicons.dev/icons?i=vercel,git,github" height="55" /> </p>
 
 
 
@@ -31,7 +37,6 @@ Modern full-stack grocery e-commerce web application built with React, Node.js, 
 - [API Endpoints](#api-endpoints)
 - [Project Screenshots](#project-screenshots)
 - [Author](#author)
-- [License](#license)
 
 
 
