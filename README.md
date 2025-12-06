@@ -1,21 +1,22 @@
 # 📦 GreenCart — MERN E-Commerce Platform
 
 Modern full-stack grocery e-commerce web application built with React, Node.js, Express, and MongoDB, featuring authentication, cart management, product admin tools, online payments, and Cloudinary image uploads.
-
 <br>
-
 ## 🏷️ Badges
-<p align="left"> <img src="https://img.shields.io/badge/Frontend-React%2019-blue?style=for-the-badge" /> <img src="https://img.shields.io/badge/Backend-Node.js%20%7C%20Express-green?style=for-the-badge" /> <img src="https://img.shields.io/badge/Database-MongoDB-brightgreen?style=for-the-badge" /> <img src="https://img.shields.io/badge/Payments-Stripe-8A2BE2?style=for-the-badge" /> <img src="https://img.shields.io/badge/Images-Cloudinary-lightgrey?style=for-the-badge" /> <img src="https://img.shields.io/badge/Deploy-Vercel-black?style=for-the-badge" /> </p> <br>
+<p align="center"> <img src="https://img.shields.io/badge/Frontend-React%2019-blue?style=for-the-badge" /> <img src="https://img.shields.io/badge/Backend-Node.js%20%7C%20Express-green?style=for-the-badge" /> <img src="https://img.shields.io/badge/Database-MongoDB-brightgreen?style=for-the-badge" /> <img src="https://img.shields.io/badge/Payments-Stripe-8A2BE2?style=for-the-badge" /> <img src="https://img.shields.io/badge/Images-Cloudinary-lightgrey?style=for-the-badge" /> <img src="https://img.shields.io/badge/Deploy-Vercel-black?style=for-the-badge" /> </p> <br>
 
 
 
 ## 🚀 Tech Stack
-Frontend
-<p> <img src="https://skillicons.dev/icons?i=react,vite,tailwind,js" height="55" /> </p>
-Backend
-<p> <img src="https://skillicons.dev/icons?i=nodejs,express,mongodb" height="55" /> </p>
-Cloud / Tools
-<p> <img src="https://skillicons.dev/icons?i=cloudflare,vercel,git,github" height="55" /> </p>
+#### Frontend
+<p align="center"> <img src="https://skillicons.dev/icons?i=react,vite,react-router,tailwind,axios" height="55" /> </p>
+
+#### Backend
+<p align="center"> <img src="https://skillicons.dev/icons?i=nodejs,express,JWT-Authentication,JWTAuthentication,MongoDB,Mongoose,cloudinary,stripe" height="55" /> </p>
+
+#### Tools
+<p align="center"> <img src="https://skillicons.dev/icons?i=vercel,git,github" height="55" /> </p>
+
 
 
 ## Table of Contents
@@ -24,7 +25,6 @@ Cloud / Tools
 
 - [Overview](#overview)
 - [Features](#features)
-- [Tech Stack](#tech-stack)
 - [Project Structure](#project-structure)
 - [Environment Variables](#environment-variables)
 - [Installation](#installation)
@@ -52,95 +52,11 @@ This project demonstrates:
 * Scalable backend MVC folder structure
 
 
-## 📁 Project Structure
 
-greencart/
-│
-├── client/          # React Frontend
-├── server/          # Node.js + Express Backend
-├── screenshots/     
-├── README.md
-└── .gitignore
+## Features
 
-
-
-🔐 Environment Variables
-Backend .env
-
-PORT=4000
-NODE_ENV=development
-JWT_SECRET=your_jwt
-MONGODB_URI=your_mongodb_uri
-
-# Admin login
-SELLER_EMAIL=your_admin_email
-SELLER_PASSWORD=your_admin_password
-
-# Cloudinary
-CLOUDINARY_CLOUD_NAME=
-CLOUDINARY_API_KEY=
-CLOUDINARY_API_SECRET=
-
-# Stripe
-STRIPE_PUBLISHABLE_KEY=
-STRIPE_SECRET_KEY=
-STRIPE_WEBHOOK_SECRET=
-
-
-Frontend .env
-
-VITE_BACKEND_URL=http://localhost:4000
-VITE_CURRENCY=$
-
-
-
-⚙️ Backend Features
-👤 User Auth
-
-* Register / Login
-
-* JSON Web Token (JWT) authentication
-
-* Auth-protected routes
-
-* Secure cookies (httpOnly, sameSite, secure)
-
-🛒 Cart
-
-* Add / update cart
-
-* Cart sync with database
-
-📦 Products
-
-* Cloudinary image upload
-
-* Seller/Admin protected
-
-* Update stock
-
-* Product listing + filter
-
-📬 Address
-
-* Save address
-
-* Retrieve address
-
-* Connected to orders
-
-🧾 Orders
-
-* COD checkout
-
-* Stripe payment (webhooks supported)
-
-* User order history
-
-* Admin full order list
-
-⚙️ Frontend Features
-🛍️ Storefront
+### ⚙️ Frontend Features
+#### 🛍️ Storefront
 
 * Product listing
 
@@ -150,7 +66,7 @@ VITE_CURRENCY=$
 
 * Dynamic cart count
 
-👤 User System
+#### 👤 User System
 
 * Login / Register
 
@@ -158,13 +74,13 @@ VITE_CURRENCY=$
 
 * Manage addresses
 
-💳 Checkout
+#### 💳 Checkout
 
 * Cash on Delivery
 
 * Stripe payment
 
-🛠️ Seller/Admin Panel
+#### 🛠️ Seller/Admin Panel
 
 * Add products
 
@@ -172,57 +88,154 @@ VITE_CURRENCY=$
 
 * View all orders
 
+### ⚙️ Backend Features
 
-📡 API Routes Overview
-User Routes
-POST   /api/user/register
-POST   /api/user/login
-GET    /api/user/is-auth
-GET    /api/user/logout
+#### 👤 User Auth
 
-Product Routes
-POST   /api/product/add
-POST   /api/product/stock
-GET    /api/product/list
-GET    /api/product/id?id=<productId>
+* Register / Login
 
-Cart Route
-POST   /api/cart/update
+* JSON Web Token (JWT) authentication
 
-Address Routes
-POST   /api/address/add
-GET    /api/address/get
+* Auth-protected routes
 
-Order Routes
-POST   /api/order/cod
-POST   /api/order/stripe
-GET    /api/order/user
-GET    /api/order/seller
+* Secure cookies (httpOnly, sameSite, secure)
+
+#### 🛒 Cart
+
+* Add / update cart
+
+* Cart sync with database
+
+#### 📦 Products
+
+* Cloudinary image upload
+
+* Seller/Admin protected
+
+* Update stock
+
+* Product listing + filter
+
+#### 📬 Address
+
+* Save address
+
+* Retrieve address
+
+* Connected to orders
+
+#### 🧾 Orders
+
+* COD checkout
+
+* Stripe payment (webhooks supported)
+
+* User order history
+
+* Admin full order list
+
+
+## 📁 Project Structure
+
+```text
+greencart/
+   │
+   ├── client/        # React frontend
+   ├── server/        # Node.js backend
+   ├── screenshots/   # Images for README
+   ├── README.md
+   └── .gitignore
+
+
+
+
+## 🔐 Environment Variables
+Backend .env
+
+* PORT=4000
+* NODE_ENV=development
+* JWT_SECRET=your_jwt
+* MONGODB_URI=your_mongodb_uri
+
+### Seller login
+* SELLER_EMAIL=your_admin_email
+* SELLER_PASSWORD=your_admin_password
+
+#### Cloudinary
+* CLOUDINARY_CLOUD_NAME=
+* CLOUDINARY_API_KEY=
+* CLOUDINARY_API_SECRET=
+
+#### Stripe
+* STRIPE_PUBLISHABLE_KEY=
+* STRIPE_SECRET_KEY=
+* STRIPE_WEBHOOK_SECRET=
+
+
+Frontend .env
+
+* VITE_BACKEND_URL=http://localhost:4000
+* VITE_CURRENCY=$
+
+## Installation
 
 🧪 Run Locally
 1. Clone Repo
+
+```text
 git clone https://github.com/YOUR_USERNAME/greencart.git
 cd greencart
 
-Backend
+#### Backend
+
+```text
 cd server
 npm install
 npm run server
 
-Frontend
+
+#### Frontend
+
+```text
 cd client
 npm install
 npm run dev
 
 
-🚀 Deployments
-Frontend: Vercel
-Backend: Vercel (Serverless)
-Database: MongoDB Atlas
-Images: Cloudinary
+## API Endpoints
+
+### User Routes
+```text
+POST   /api/user/register
+POST   /api/user/login
+GET    /api/user/is-auth
+GET    /api/user/logout
+
+### Product Routes
+```text
+POST   /api/product/add
+POST   /api/product/stock
+GET    /api/product/list
+GET    /api/product/id?id=<productId>
+
+### Cart Route
+POST   /api/cart/update
+
+### Address Routes
+```text
+POST   /api/address/add
+GET    /api/address/get
+
+### Order Routes
+```text
+POST   /api/order/cod
+POST   /api/order/stripe
+GET    /api/order/user
+GET    /api/order/seller
 
 
-📸 Project Screenshots
+
+## 📸 Project Screenshots
 
 ![Home](./screenshots/1.frontpage.png)
 
