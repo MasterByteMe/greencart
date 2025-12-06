@@ -240,22 +240,34 @@ GET    /api/order/seller
 
 ## Project Screenshots
 
+### Home
 ![Home](./screenshots/1.frontpage.png)
 
+### Product List
 ![Product List](./screenshots/4.product_list.png)
 
+
+### Product Details
 ![Product Details](./screenshots/6.product_details.png)
 
-![Product Details](./screenshots/6.product_details.png)
 
+### Product Cart
 ![Product Cart](./screenshots/7.cart.png)
 
+
+### Product Checkout-Stripe
 ![Product Checkout-Stripe](./screenshots/9.order_stripe.png)
 
+
+### Seller Login
 ![Seller Login](./screenshots/11.seller_login.png)
 
+
+### Seller Add Product
 ![Add Product](./screenshots/12.seller_add_product.png)
 
+
+### Seller Order Management
 ![Order Management](./screenshots/14.seller_order_list.png)
 
 
